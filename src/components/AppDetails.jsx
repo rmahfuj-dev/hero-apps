@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import Container from "../layouts/Container";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+
 import {
   BarChart,
   Bar,
@@ -22,7 +24,8 @@ const AppDetails = () => {
 
   useEffect(() => {
     if (!item) return;
-    const installedApps = JSON.parse(localStorage.getItem("installedApps")) || [];
+    const installedApps =
+      JSON.parse(localStorage.getItem("installedApps")) || [];
     if (installedApps.includes(item.id)) {
       setClicked(true);
     }
@@ -30,11 +33,24 @@ const AppDetails = () => {
 
   const handleInstall = () => {
     if (!item) return;
-    setClicked(true);
-    const installedApps = JSON.parse(localStorage.getItem("installedApps")) || [];
+
+    const installedApps =
+      JSON.parse(localStorage.getItem("installedApps")) || [];
+
     if (!installedApps.includes(item.id)) {
       installedApps.push(item.id);
       localStorage.setItem("installedApps", JSON.stringify(installedApps));
+      setClicked(true);
+      toast.success(`${item.title} installed successfully!`, {
+        position: "top-right",
+        autoClose: 2000,
+      });
+    } else {
+      toast.info(`${item.title} is already installed!`, {
+        position: "top-right",
+        autoClose: 2000,
+      });
+      setClicked(true);
     }
   };
 
@@ -81,7 +97,9 @@ const AppDetails = () => {
               <MdOutlineFileDownload className="text-7xl font-extrabold text-violet-600" />
               <div className="info">
                 <p className="text-sm text-gray-400">Total Reviews</p>
-                <p className="text-4xl font-extrabold">{item.reviews / 1000}K</p>
+                <p className="text-4xl font-extrabold">
+                  {item.reviews / 1000}K
+                </p>
               </div>
             </div>
           </div>
@@ -106,7 +124,12 @@ const AppDetails = () => {
             barCategoryGap="30%"
           >
             <XAxis type="number" tick={{ fontSize: 18 }} />
-            <YAxis type="category" dataKey="name" tick={{ fontSize: 18 }} reversed />
+            <YAxis
+              type="category"
+              dataKey="name"
+              tick={{ fontSize: 18 }}
+              reversed
+            />
             <Tooltip />
             <Bar
               dataKey="count"
@@ -128,6 +151,7 @@ const AppDetails = () => {
         </h2>
         <p className="text-xl text-gray-500">{item.description}</p>
       </div>
+      <ToastContainer />
     </Container>
   );
 };
