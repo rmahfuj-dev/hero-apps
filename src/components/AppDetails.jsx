@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { AppContext } from "../contexts/AppsContext";
 import { useParams } from "react-router-dom";
 import Container from "../layouts/Container";
@@ -9,26 +9,45 @@ import {
   Bar,
   XAxis,
   YAxis,
-  CartesianGrid,
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+
 const AppDetails = () => {
   const { apps } = useContext(AppContext);
   const { id } = useParams();
+  const [clicked, setClicked] = useState(false);
+
+  const item = apps ? apps.find((app) => app.id === Number(id)) : null;
+
+  useEffect(() => {
+    if (!item) return;
+    const installedApps = JSON.parse(localStorage.getItem("installedApps")) || [];
+    if (installedApps.includes(item.id)) {
+      setClicked(true);
+    }
+  }, [item]);
+
+  const handleInstall = () => {
+    if (!item) return;
+    setClicked(true);
+    const installedApps = JSON.parse(localStorage.getItem("installedApps")) || [];
+    if (!installedApps.includes(item.id)) {
+      installedApps.push(item.id);
+      localStorage.setItem("installedApps", JSON.stringify(installedApps));
+    }
+  };
 
   if (!apps || apps.length === 0) {
     return <div className="text-center mt-10 text-xl">Loading...</div>;
   }
-
-  const item = apps.find((app) => app.id === Number(id));
 
   if (!item) {
     return <div className="text-center mt-10 text-xl">App not found 😔</div>;
   }
 
   return (
-    <Container>
+    <Container className="py-[80px]">
       <div className="p-6 flex items-start lg:gap-[100px] flex-col gap-4 lg:flex-row border-gray-300 border-b-[3px]">
         <img
           src={item.image}
@@ -41,11 +60,8 @@ const AppDetails = () => {
             Developed by{" "}
             <span className="text-violet-600">{item.companyName}</span>
           </p>
-          <div className="statistic-data flex">
-            <div
-              className="downloads flex justify-center items-center gap-2 p-4 border-r border-dashed border-blue-300
-            "
-            >
+          <div className="statistic-data flex flex-col sm:flex-row">
+            <div className="downloads flex justify-center items-center gap-2 p-4 border-r sm:border-dashed border-blue-300 border-none">
               <MdOutlineFileDownload className="text-7xl font-extrabold text-violet-600" />
               <div className="info">
                 <p className="text-sm text-gray-400">Downloads</p>
@@ -54,10 +70,10 @@ const AppDetails = () => {
                 </p>
               </div>
             </div>
-            <div className="flex justify-center items-center gap-2  p-4 border-r border-dashed border-blue-300">
+            <div className="flex justify-center items-center gap-2 p-4 border-r sm:border-dashed border-blue-300 border-none">
               <FaStar className="text-7xl font-extrabold text-violet-600" />
               <div className="info">
-                <p className="text-sm text-gray-400">Avarage Ratings</p>
+                <p className="text-sm text-gray-400">Average Ratings</p>
                 <p className="text-4xl font-extrabold">{item.ratingAvg}</p>
               </div>
             </div>
@@ -65,20 +81,23 @@ const AppDetails = () => {
               <MdOutlineFileDownload className="text-7xl font-extrabold text-violet-600" />
               <div className="info">
                 <p className="text-sm text-gray-400">Total Reviews</p>
-                <p className="text-4xl font-extrabold">
-                  {item.reviews / 1000}K
-                </p>
+                <p className="text-4xl font-extrabold">{item.reviews / 1000}K</p>
               </div>
             </div>
           </div>
-          <div className="button   w-full">
-            <button className="shine-button bg-[#00D390] text-white text-2xl font-extrabold px-5 py-4 rounded-md mb-7">
-              Download Now ({item.size}MB)
+          <div className="button w-full flex justify-center sm:justify-start">
+            <button
+              className="shine-button bg-[#00D390] text-white text-2xl font-extrabold px-5 py-4 rounded-md mb-7"
+              onClick={handleInstall}
+            >
+              {clicked ? "Installed" : `Install Now (${item.size} MB)`}
             </button>
           </div>
         </div>
       </div>
-      <div className="w-full h-80">
+
+      <div className="w-full h-64 md:h-80 lg:h-96 mt-6 mb-6">
+        <h2 className="text-4xl font-extrabold mb-4 text-[#392F5A]">Ratings</h2>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             layout="vertical"
@@ -86,31 +105,28 @@ const AppDetails = () => {
             margin={{ top: 20, right: 30, left: 50, bottom: 20 }}
             barCategoryGap="30%"
           >
-            <XAxis
-              type="number"
-              tick={{ fontSize: 18 }}
-              domain={[0, 12000]}
-              ticks={[0, 3000, 6000, 9000, 12000]}
-            />
-            <YAxis
-              type="category"
-              dataKey="name"
-              tick={{ fontSize: 18 }}
-              reversed
-            />
+            <XAxis type="number" tick={{ fontSize: 18 }} />
+            <YAxis type="category" dataKey="name" tick={{ fontSize: 18 }} reversed />
             <Tooltip />
             <Bar
               dataKey="count"
               fill="#00D390"
               barSize={18}
               radius={[0, 4, 4, 0]}
-              isAnimationActive={true}
+              isAnimationActive
               animationBegin={100}
               animationDuration={600}
               animationEasing="ease-in-out"
             />
           </BarChart>
         </ResponsiveContainer>
+      </div>
+
+      <div>
+        <h2 className="text-4xl font-extrabold mt-[60px] text-[#392F5A] mb-4">
+          Description
+        </h2>
+        <p className="text-xl text-gray-500">{item.description}</p>
       </div>
     </Container>
   );
