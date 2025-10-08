@@ -14,7 +14,8 @@ const BannerText = () => {
       </h1>
       <p className="text-[#627382] text-[20px] leading-[32px]">
         At HERO.IO, we craft innovative apps designed to make everyday life
-        simpler, smarter, and more exciting.<br className="hidden 2xl:block" /> Our goal is to turn your ideas into
+        simpler, smarter, and more exciting.
+        <br className="hidden 2xl:block" /> Our goal is to turn your ideas into
         digital experiences that truly make an impact.
       </p>
       <div className="buttons flex gap-4 mt-6 flex-col md:flex-row">
@@ -24,7 +25,7 @@ const BannerText = () => {
           </span>
           Google Play
         </button>
-        <button className="px-6 py-3 bg-white flex rounded-md gap-2 justify-center items-center hover:bg-gray-400 hover:text-white hover:scale-[1.05] transition-all duration-200" >
+        <button className="px-6 py-3 bg-white flex rounded-md gap-2 justify-center items-center hover:bg-gray-400 hover:text-white hover:scale-[1.05] transition-all duration-200">
           <span>
             <img className="w-8 h-8" src={playstore} alt="" />
           </span>

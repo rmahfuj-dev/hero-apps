@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "image": "https://cdn-icons-png.flaticon.com/512/7133/7133364.png",
+    "title": "WeatherPro",
+    "companyName": "WeatherTech",
+    "description": "Get accurate weather forecasts, hourly updates, and alerts for your city.",
+    "size": 30,
+    "reviews": 1500,
+    "ratingAvg": 4.7,
+    "downloads": 5000000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 100 },
+      { "name": "3 star", "count": 200 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 650 }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "https://cdn-icons-png.flaticon.com/512/7241/7241777.png",
+    "title": "FitTrack",
+    "companyName": "HealthCorp",
+    "description": "Track your fitness routines, calories burned, and daily progress easily.",
+    "size": 40,
+    "reviews": 1200,
+    "ratingAvg": 4.5,
+    "downloads": 3000000,
+    "ratings": [
+      { "name": "1 star", "count": 30 },
+      { "name": "2 star", "count": 70 },
+      { "name": "3 star", "count": 150 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 550 }
+    ]
+  },
+  {
+    "id": 3,
+    "image": "https://play-lh.googleusercontent.com/zaOlK2OxEdn--bMl7YDnMnsRLvSvQ2grvSKgGGzyYEFy2BtKPjBtFj-F0CHrrx2SsQ",
+    "title": "PhotoSnap",
+    "companyName": "SnapTech",
+    "description": "Capture, edit, and share stunning photos with intuitive editing tools.",
+    "size": 50,
+    "reviews": 2000,
+    "ratingAvg": 4.8,
+    "downloads": 7000000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 80 },
+      { "name": "3 star", "count": 160 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 1220 }
+    ]
+  },
+  {
+    "id": 4,
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/037/753/271/small_2x/music-icon-3d-render-illustration-png.png",
+    "title": "MusicFlow",
+    "companyName": "SoundWave",
+    "description": "Stream millions of songs, create playlists, and discover new artists daily.",
+    "size": 60,
+    "reviews": 2500,
+    "ratingAvg": 4.6,
+    "downloads": 9000000,
+    "ratings": [
+      { "name": "1 star", "count": 60 },
+      { "name": "2 star", "count": 90 },
+      { "name": "3 star", "count": 180 },
+      { "name": "4 star", "count": 600 },
+      { "name": "5 star", "count": 1570 }
+    ]
+  },
+  {
+    "id": 5,
+    "image": "https://png.pngtree.com/png-vector/20240620/ourmid/pngtree-travel-app-icon-illustration-of-a-camera-on-a-globe-vector-png-image_7038349.png",
+    "title": "TravelMate",
+    "companyName": "GlobeTrotters",
+    "description": "Plan trips, book hotels, and explore destinations with personalized recommendations.",
+    "size": 45,
+    "reviews": 1800,
+    "ratingAvg": 4.7,
+    "downloads": 6500000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 80 },
+      { "name": "3 star", "count": 150 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 1030 }
+    ]
+  },
+  {
+    "id": 6,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Samsung_Notes_icon.png",
+    "title": "NoteKeeper",
+    "companyName": "QuickNotes",
+    "description": "Write notes, organize tasks, and sync across all devices seamlessly.",
+    "size": 25,
+    "reviews": 900,
+    "ratingAvg": 4.3,
+    "downloads": 2200000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 50 },
+      { "name": "3 star", "count": 120 },
+      { "name": "4 star", "count": 300 },
+      { "name": "5 star", "count": 410 }
+    ]
+  },
+  {
+    "id": 7,
+    "image": "https://cdn-icons-png.flaticon.com/512/1686/1686439.png",
+    "title": "Foodies",
+    "companyName": "EatWell",
+    "description": "Discover new restaurants, read reviews, and order food online easily.",
+    "size": 55,
+    "reviews": 1700,
+    "ratingAvg": 4.6,
+    "downloads": 5200000,
+    "ratings": [
+      { "name": "1 star", "count": 30 },
+      { "name": "2 star", "count": 60 },
+      { "name": "3 star", "count": 140 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 1070 }
+    ]
+  },
+  {
+    "id": 8,
+    "image": "https://cdn-icons-png.flaticon.com/512/4541/4541461.png",
+    "title": "FinanceTracker",
+    "companyName": "MoneySmart",
+    "description": "Manage budgets, track expenses, and set financial goals effortlessly.",
+    "size": 35,
+    "reviews": 1300,
+    "ratingAvg": 4.5,
+    "downloads": 3300000,
+    "ratings": [
+      { "name": "1 star", "count": 25 },
+      { "name": "2 star", "count": 50 },
+      { "name": "3 star", "count": 110 },
+      { "name": "4 star", "count": 350 },
+      { "name": "5 star", "count": 765 }
+    ]
+  },
+  {
+    "id": 9,
+    "image": "https://cdn-icons-png.flaticon.com/512/7458/7458117.png",
+    "title": "TaskMaster",
+    "companyName": "ProTasks",
+    "description": "Organize your tasks, set deadlines, and boost your productivity daily.",
+    "size": 28,
+    "reviews": 1100,
+    "ratingAvg": 4.4,
+    "downloads": 2800000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 45 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 320 },
+      { "name": "5 star", "count": 615 }
+    ]
+  },
+  {
+    "id": 10,
+    "image": "https://cdn-icons-png.flaticon.com/512/17489/17489502.png",
+    "title": "BookWorld",
+    "companyName": "ReadMore",
+    "description": "Explore thousands of books, track reading progress, and get recommendations.",
+    "size": 42,
+    "reviews": 1400,
+    "ratingAvg": 4.6,
+    "downloads": 4100000,
+    "ratings": [
+      { "name": "1 star", "count": 30 },
+      { "name": "2 star", "count": 55 },
+      { "name": "3 star", "count": 130 },
+      { "name": "4 star", "count": 420 },
+      { "name": "5 star", "count": 765 }
+    ]
+  },
+  {
+    "id": 11,
+    "image": "https://cdn-icons-png.flaticon.com/512/2906/2906496.png",
+    "title": "MeditateNow",
+    "companyName": "MindPeace",
+    "description": "Guided meditation and relaxation techniques to reduce stress daily.",
+    "size": 33,
+    "reviews": 900,
+    "ratingAvg": 4.5,
+    "downloads": 2700000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 40 },
+      { "name": "3 star", "count": 90 },
+      { "name": "4 star", "count": 300 },
+      { "name": "5 star", "count": 450 }
+    ]
+  },
+  {
+    "id": 12,
+    "image": "https://cdn-icons-png.flaticon.com/512/330/330703.png",
+    "title": "NewsFlash",
+    "companyName": "DailyNews",
+    "description": "Stay updated with real-time news and trending stories around the world.",
+    "size": 38,
+    "reviews": 1600,
+    "ratingAvg": 4.4,
+    "downloads": 4900000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 70 },
+      { "name": "3 star", "count": 150 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 840 }
+    ]
+  },
+  {
+    "id": 13,
+    "image": "https://cdn-icons-png.flaticon.com/512/8495/8495091.png",
+    "title": "LanguageBuddy",
+    "companyName": "LinguaTech",
+    "description": "Learn new languages interactively with fun exercises and quizzes.",
+    "size": 50,
+    "reviews": 1300,
+    "ratingAvg": 4.6,
+    "downloads": 3600000,
+    "ratings": [
+      { "name": "1 star", "count": 25 },
+      { "name": "2 star", "count": 50 },
+      { "name": "3 star", "count": 120 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 705 }
+    ]
+  },
+  {
+    "id": 14,
+    "image": "https://cdn-icons-png.flaticon.com/512/4757/4757094.png",
+    "title": "BudgetEase",
+    "companyName": "FinancePro",
+    "description": "Easily manage personal budgets, track expenses, and set savings goals.",
+    "size": 34,
+    "reviews": 1100,
+    "ratingAvg": 4.5,
+    "downloads": 3100000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 45 },
+      { "name": "3 star", "count": 100 },
+      { "name": "4 star", "count": 350 },
+      { "name": "5 star", "count": 585 }
+    ]
+  },
+  {
+    "id": 15,
+    "image": "https://cdn-icons-png.flaticon.com/512/9674/9674659.png",
+    "title": "ShopEase",
+    "companyName": "QuickCart",
+    "description": "Shop online, compare prices, and get exclusive deals on products.",
+    "size": 60,
+    "reviews": 2000,
+    "ratingAvg": 4.7,
+    "downloads": 7800000,
+    "ratings": [
+      { "name": "1 star", "count": 50 },
+      { "name": "2 star", "count": 90 },
+      { "name": "3 star", "count": 200 },
+      { "name": "4 star", "count": 600 },
+      { "name": "5 star", "count": 1060 }
+    ]
+  },
+  {
+    "id": 16,
+    "image": "https://cdn-icons-png.flaticon.com/512/5656/5656103.png",
+    "title": "DailyPlanner",
+    "companyName": "PlanSmart",
+    "description": "Organize your day, create schedules, and track tasks efficiently.",
+    "size": 32,
+    "reviews": 1200,
+    "ratingAvg": 4.4,
+    "downloads": 2900000,
+    "ratings": [
+      { "name": "1 star", "count": 20 },
+      { "name": "2 star", "count": 50 },
+      { "name": "3 star", "count": 120 },
+      { "name": "4 star", "count": 350 },
+      { "name": "5 star", "count": 660 }
+    ]
+  },
+  {
+    "id": 17,
+    "image": "https://cdn-icons-png.flaticon.com/512/2907/2907086.png",
+    "title": "TravelLogger",
+    "companyName": "TripDiary",
+    "description": "Log your trips, share experiences, and save memories in one place.",
+    "size": 45,
+    "reviews": 900,
+    "ratingAvg": 4.5,
+    "downloads": 2100000,
+    "ratings": [
+      { "name": "1 star", "count": 15 },
+      { "name": "2 star", "count": 35 },
+      { "name": "3 star", "count": 80 },
+      { "name": "4 star", "count": 280 },
+      { "name": "5 star", "count": 490 }
+    ]
+  },
+  {
+    "id": 18,
+    "image": "https://cdn-icons-png.flaticon.com/512/1869/1869042.png",
+    "title": "RecipeMaster",
+    "companyName": "CookIt",
+    "description": "Discover recipes, create shopping lists, and cook delicious meals easily.",
+    "size": 50,
+    "reviews": 1400,
+    "ratingAvg": 4.6,
+    "downloads": 4000000,
+    "ratings": [
+      { "name": "1 star", "count": 30 },
+      { "name": "2 star", "count": 60 },
+      { "name": "3 star", "count": 130 },
+      { "name": "4 star", "count": 400 },
+      { "name": "5 star", "count": 780 }
+    ]
+  },
+  {
+    "id": 19,
+    "image": "https://cdn-icons-png.flaticon.com/512/3698/3698776.png",
+    "title": "MovieTime",
+    "companyName": "CinemaHub",
+    "description": "Browse movie listings, watch trailers, and book tickets easily online.",
+    "size": 55,
+    "reviews": 1600,
+    "ratingAvg": 4.7,
+    "downloads": 6200000,
+    "ratings": [
+      { "name": "1 star", "count": 40 },
+      { "name": "2 star", "count": 80 },
+      { "name": "3 star", "count": 150 },
+      { "name": "4 star", "count": 500 },
+      { "name": "5 star", "count": 1030 }
+    ]
+  },
+  {
+    "id": 20,
+    "image": "https://cdn-icons-png.flaticon.com/512/10415/10415700.png",
+    "title": "HealthMonitor",
+    "companyName": "WellnessApps",
+    "description": "Monitor your health vitals, get insights, and stay healthy every day.",
+    "size": 38,
+    "reviews": 1300,
+    "ratingAvg": 4.6,
+    "downloads": 3500000,
+    "ratings": [
+      { "name": "1 star", "count": 25 },
+      { "name": "2 star", "count": 50 },
+      { "name": "3 star", "count": 110 },
+      { "name": "4 star", "count": 350 },
+      { "name": "5 star", "count": 765 }
+    ]
+  }
+]
