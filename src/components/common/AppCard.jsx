@@ -1,10 +1,17 @@
 import React from "react";
 import { LuDownload } from "react-icons/lu";
 import { FaStar } from "react-icons/fa6";
+import { useNavigate, useParams } from "react-router-dom";
 
 const AppCard = ({ id, image, title, downloads, ratingAvg }) => {
+  const navigate = useNavigate();
   return (
-    <div className="flex flex-col w-full h-[435px] items-center rounded-xl p-4 bg-white gap-4 justify-between hover:translate-y-[-8px] duration-300 transition-all">
+    <div
+      className="flex flex-col w-full h-[435px] items-center rounded-xl p-4 bg-white gap-4 justify-between hover:translate-y-[-8px] duration-300 transition-all"
+      onClick={() => {
+        navigate(`/apps/${id}`);
+      }}
+    >
       <div className="image-wrapper w-full h-[316px]">
         <img
           className="w-full h-full object-contain object-center rounded-[10px]"
