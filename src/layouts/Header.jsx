@@ -2,7 +2,9 @@ import React from "react";
 import { IoHomeOutline } from "react-icons/io5";
 import { FaAppStore } from "react-icons/fa";
 import { MdInstallDesktop } from "react-icons/md";
-import logo from '../assets/images/logo.png'
+import { FaGithubSquare } from "react-icons/fa";
+
+import logo from "../assets/images/logo.png";
 
 import { Link, NavLink } from "react-router-dom";
 
@@ -10,31 +12,47 @@ const Header = () => {
   const links = (
     <>
       <li>
-        <NavLink to="/">
-          <span>
-            <IoHomeOutline />
-          </span>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "inline-flex items-center gap-1 text-blue-400 border-b-2 border-blue-400 pb-1 rounded-none"
+              : "inline-flex items-center gap-1 text-gray-700 hover:text-blue-400"
+          }
+        >
+          <IoHomeOutline />
           Home
         </NavLink>
       </li>
       <li>
-        <NavLink to="apps">
-          <span>
-            <FaAppStore />
-          </span>
+        <NavLink
+          to="/apps"
+          className={({ isActive }) =>
+            isActive
+              ? "inline-flex items-center gap-1 text-blue-400 border-b-2 border-blue-400 pb-1 rounded-none"
+              : "inline-flex items-center gap-1 text-gray-700 hover:text-blue-400"
+          }
+        >
+          <FaAppStore />
           Apps
         </NavLink>
       </li>
       <li>
-        <NavLink to="installation">
-          <span>
-            <MdInstallDesktop />
-          </span>
+        <NavLink
+          to="/installation"
+          className={({ isActive }) =>
+            isActive
+              ? "inline-flex items-center gap-1 text-blue-400 border-b-2 border-blue-400 pb-1 rounded-none"
+              : "inline-flex items-center gap-1 text-gray-700 hover:text-blue-400"
+          }
+        >
+          <MdInstallDesktop />
           Installation
         </NavLink>
       </li>
     </>
   );
+
   return (
     <header>
       <div className="navbar bg-base-100 shadow-sm">
@@ -59,18 +77,31 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow font-semibold text-gray-500"
             >
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">HERO.IO</a>
+          <a className="btn btn-ghost text-xl">
+            <span>
+              <img className="w-10 h-10" src={logo} alt="" />
+            </span>
+            HERO.IO
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <a
+            href="https://github.com"
+            className="text-white btn bg-[linear-gradient(to_bottom_right,_#632EE3_0%,_#9F62F2_100%)]"
+          >
+            <span className="text-xl">
+              <FaGithubSquare />
+            </span>
+            Contribute
+          </a>
         </div>
       </div>
     </header>
