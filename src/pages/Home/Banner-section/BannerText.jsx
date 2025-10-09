@@ -22,19 +22,25 @@ const BannerText = () => {
         is to turn your ideas into digital experiences that truly make an
         impact.
       </p>
-      <div className="buttons flex gap-4 mt-6 flex-col md:flex-row">
-        <button className="px-6 py-3 bg-white flex rounded-md gap-2 justify-center items-center hover:bg-gray-400 hover:text-white hover:scale-[1.05] transition-all duration-200">
-          <span>
-            <img className="w-8 h-8" src={appstore} alt="" />
-          </span>
-          Google Play
-        </button>
-        <button className="px-6 py-3 bg-white flex rounded-md gap-2 justify-center items-center hover:bg-gray-400 hover:text-white hover:scale-[1.05] transition-all duration-200">
-          <span>
-            <img className="w-8 h-8" src={playstore} alt="" />
-          </span>
-          Play Store
-        </button>
+      <div className="buttons flex gap-4 mt-6 flex-col md:flex-row items-center">
+        <a href="https://play.google.com/" target="blank">
+          <button className="px-6 py-3 bg-white flex rounded-md gap-2 justify-center items-center hover:bg-gray-400 hover:text-white hover:scale-[1.05] transition-all duration-200 text-xl font-bold">
+            <span>
+              <img className="w-8 h-8" src={playstore} alt="" />
+            </span>
+            Google Play
+          </button>
+        </a>
+        <a href="https://www.apple.com/app-store/" target="blank">
+          <button className="px-6 py-3 bg-white flex rounded-md gap-2 justify-center items-center hover:bg-gray-400 hover:text-white hover:scale-[1.05] transition-all duration-200 text-xl font-bold">
+            <span>
+              <img className="w-8 h-8" src={appstore} alt="" />
+            </span>
+            App Store
+          </button>
+        </a>
+
+        
       </div>
     </div>
   );

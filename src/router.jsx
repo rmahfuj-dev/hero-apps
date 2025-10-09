@@ -5,6 +5,7 @@ import Home from "./pages/Home/Home";
 import Apps from "./pages/Apps/Apps";
 import AppDetails from "./components/AppDetails";
 import Installation from "./pages/Installation/Installation";
+import Error from "./pages/not-found/Error";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,8 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "apps", element: <Apps /> },
       { path: "apps/:id", element: <AppDetails /> },
-      {path:"installation",element:<Installation />}
+      {path:"installation",element:<Installation />},
+      {path:"*",element:<Error />}
     ],
   },
 ]);

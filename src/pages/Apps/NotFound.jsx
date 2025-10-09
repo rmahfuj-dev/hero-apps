@@ -8,7 +8,7 @@ const NotFound = () => {
   return (
     <div className="flex flex-col justify-center items-center gap-[50px] pt-6">
       <h1 className="text-6xl font-bold text-gray-500 text-center">
-        NO Apps Found
+        No Apps Found
       </h1>
       <button
         onClick={handleReload}
