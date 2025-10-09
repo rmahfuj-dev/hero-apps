@@ -47,11 +47,11 @@ const Installation = () => {
   }
 
   return (
-    <Container>
+    <Container className="py-[20px]">
       <div className="p-6">
         <InstalledHeading />
-        <div className="flex justify-between items-center pb-7 mb-5 border-b-[3px] border-gray-300">
-          <p className="text-xl text-violet-800 font-medium underline">
+        <div className="flex justify-between items-center pb-7 mb-5 border-b-[3px] border-gray-300 flex-col gap-4 sm:flex-row sm:gap-0">
+          <p className="text-xl font-medium  px-4 py-1 rounded-md bg-white">
             {installedAppsDetails.length} Apps Found
           </p>
           <select

@@ -82,20 +82,18 @@ const Header = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">
-            <span>
-              <img className="w-10 h-10" src={logo} alt="" />
-            </span>
-            HERO.IO
-          </a>
+          <Link to="/" className="btn btn-ghost text-xl">
+            <img className="w-10 h-10" src={logo} alt="" />
+            <span className="text-[#632ee3]">HERO.IO</span>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
           <a
-            href="https://github.com"
-            className="text-white btn bg-[linear-gradient(to_bottom_right,_#632EE3_0%,_#9F62F2_100%)]"
+            href="https://github.com/rmahfuj-dev/hero-apps"
+            className="shine-button text-white btn bg-[linear-gradient(to_bottom_right,_#632EE3_0%,_#9F62F2_100%)]"
           >
             <span className="text-xl">
               <FaGithubSquare />

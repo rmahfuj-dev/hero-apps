@@ -5,7 +5,7 @@ import Container from "../layouts/Container";
 import { MdOutlineFileDownload } from "react-icons/md";
 import { FaStar } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
-
+import "react-toastify/dist/ReactToastify.css";
 import {
   BarChart,
   Bar,
@@ -23,6 +23,9 @@ const AppDetails = () => {
   const item = apps ? apps.find((app) => app.id === Number(id)) : null;
 
   useEffect(() => {
+    // Scroll to top on page load
+    window.scrollTo(0, 0);
+
     if (!item) return;
     const installedApps =
       JSON.parse(localStorage.getItem("installedApps")) || [];

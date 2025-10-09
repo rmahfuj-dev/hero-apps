@@ -6,8 +6,8 @@ import Container from "../../../layouts/Container";
 const Banner = () => {
   return (
     <section className="banner">
-      <Container className="px-[80px] pt-[80px]">
-        <div className="banner-wrapper flex flex-col gap-10">
+      <Container className="pt-[80px]">
+        <div className="banner-wrapper flex flex-col gap-10 overflow-hidden">
           <BannerText />
           <BannerImg />
         </div>

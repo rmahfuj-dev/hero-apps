@@ -21,7 +21,7 @@ const InstalledAppCard = ({
         />
         <div className="info">
           <h2 className="text-base font-bold mb-1">{title}</h2>
-          <div className="details flex gap-4 text-sm">
+          <div className="details flex gap-2 sm:gap-4 text-sm text-[12px] sm:text-base">
             <p className="text-green-600 flex items-center gap-1">
               <MdOutlineFileDownload />
               {downloads / 10000000}M
@@ -30,6 +30,7 @@ const InstalledAppCard = ({
               <FaStar />
               {ratingAvg}
             </p>
+            <p className="text-gray-500">{size}MB</p>
           </div>
         </div>
       </div>

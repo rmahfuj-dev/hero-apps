@@ -7,7 +7,7 @@ const AppCard = ({ id, image, title, downloads, ratingAvg }) => {
   const navigate = useNavigate();
   return (
     <div
-      className="flex flex-col w-full h-[435px] items-center rounded-xl p-4 bg-white gap-4 justify-between hover:translate-y-[-8px] duration-300 transition-all"
+      className="flex flex-col w-full max-w-[348px] h-[435px] items-center rounded-xl p-4 bg-white gap-4 justify-between hover:translate-y-[-8px] duration-300 transition-all"
       onClick={() => {
         navigate(`/apps/${id}`);
       }}

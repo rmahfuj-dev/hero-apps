@@ -34,3 +34,34 @@
     left: 125%;
   }
 }
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-from-left {
+  opacity: 0;
+  animation: slideFromLeft 1s ease-out forwards;
+}
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-from-right {
+  opacity: 0;
+  animation: slideFromRight 1s ease-out forwards;
+}

@@ -59,7 +59,7 @@ const AppList = () => {
       {displayedApps.length === 0 ? (
         <NotFound />
       ) : (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center gap-4">
           {displayedApps.map((app) => (
             <AppCard key={app.id} {...app} />
           ))}
