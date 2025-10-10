@@ -9,19 +9,17 @@ import InstalledHeading from "./InstalledHeading";
 const Installation = () => {
   const { apps } = useContext(AppContext);
   const [installedAppsDetails, setInstalledAppsDetails] = useState([]);
-  const [sortOrder, setSortOrder] = useState("default"); 
+  const [sortOrder, setSortOrder] = useState("default");
 
   useEffect(() => {
     const installedIds =
       JSON.parse(localStorage.getItem("installedApps")) || [];
-    let installedDetails = apps.filter((app) =>
-      installedIds.includes(app.id)
-    );
+    let installedDetails = apps.filter((app) => installedIds.includes(app.id));
 
     if (sortOrder === "low-high") {
-      installedDetails.sort((a, b) => a.size - b.size);
+      installedDetails.sort((a, b) => a.downloads - b.downloads);
     } else if (sortOrder === "high-low") {
-      installedDetails.sort((a, b) => b.size - a.size);
+      installedDetails.sort((a, b) => b.downloads - a.downloads);
     }
 
     setInstalledAppsDetails(installedDetails);

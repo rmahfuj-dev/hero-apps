@@ -4,7 +4,6 @@ import AppCard from "../../components/common/AppCard";
 import { IoIosSearch } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import NotFound from "./NotFound";
-import { motion, AnimatePresence } from "framer-motion";
 import PageLoader from "../../PageLoader";
 
 const AppList = () => {
@@ -19,7 +18,7 @@ const AppList = () => {
 
   useEffect(() => {
     setLoading(true);
-    const start = Date.now();
+
     const timer = setTimeout(() => {
       const filtered =
         key.trim() === ""
@@ -27,13 +26,10 @@ const AppList = () => {
           : apps.filter((app) =>
               app.title.toLowerCase().includes(key.trim().toLowerCase())
             );
-      const elapsed = Date.now() - start;
-      const remaining = Math.max(500 - elapsed, 0);
-      setTimeout(() => {
-        setDisplayedApps(filtered);
-        setLoading(false);
-      }, remaining);
-    }, 50);
+      setDisplayedApps(filtered);
+      setLoading(false);
+    }, 500);
+
     return () => clearTimeout(timer);
   }, [key, apps]);
 
@@ -63,41 +59,19 @@ const AppList = () => {
           </div>
         </form>
       </div>
-      <div className="min-h-[200px] relative">
-        <AnimatePresence mode="wait">
-          {loading ? (
-            <motion.div
-              key="loader"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="flex justify-center items-center h-full"
-            >
-              <PageLoader />
-            </motion.div>
-          ) : displayedApps.length === 0 ? (
-            <motion.div
-              key="notfound"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <NotFound />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="grid"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center gap-4"
-            >
-              {displayedApps.map((app) => (
-                <AppCard key={app.id} {...app} />
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
+
+      <div className="min-h-[200px] flex justify-center items-center">
+        {loading ? (
+          <PageLoader small />
+        ) : displayedApps.length === 0 ? (
+          <NotFound />
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-items-center gap-4">
+            {displayedApps.map((app) => (
+              <AppCard key={app.id} {...app} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

@@ -108,8 +108,13 @@ const AppDetails = () => {
           </div>
           <div className="button w-full flex justify-center sm:justify-start">
             <button
-              className="shine-button bg-[#00D390] text-white text-2xl font-extrabold px-5 py-4 rounded-md mb-7"
+              className={`shine-button text-2xl font-extrabold px-5 py-4 mb-7 rounded-md ${
+                clicked
+                  ? "bg-[#00D390] text-white cursor-not-allowed"
+                  : "bg-[#00D390] text-white"
+              }`}
               onClick={handleInstall}
+              disabled={clicked}
             >
               {clicked ? "Installed" : `Install Now (${item.size} MB)`}
             </button>

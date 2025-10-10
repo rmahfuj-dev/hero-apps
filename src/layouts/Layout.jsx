@@ -1,53 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Outlet, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import PageLoader from "../PageLoader";
+import { useLoader } from "../contexts/LoaderContext";
 
 const Layout = () => {
   const location = useLocation();
-  const [loading, setLoading] = useState(true);
+  const { loading, setLoading } = useLoader();
 
   useEffect(() => {
     setLoading(true);
-    const timer = setTimeout(() => setLoading(false), 800); 
+    const timer = setTimeout(() => setLoading(false), 500); // reduced from 1000ms
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 700); // reduced from 1200ms
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="bg-[#f5f5f5] flex flex-col min-h-screen overflow-hidden">
+    <>
       <AnimatePresence mode="wait">
-        {loading ? (
-          <motion.div
-            key="loader"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-white"
-          >
-            <PageLoader />
-          </motion.div>
-        ) : (
-          <motion.div
-            key={location.pathname}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-col min-h-screen"
-          >
-         
-            <Header />
-            <main className="flex-1 min-h-screen">
-              <Outlet />
-            </main>
-            <Footer />
-          </motion.div>
-        )}
+        {loading && <PageLoader key="page-loader" />}
       </AnimatePresence>
-    </div>
+
+      <Header />
+      <main className="flex-1 min-h-screen">
+        <Outlet />
+      </main>
+      <Footer />
+    </>
   );
 };
 
